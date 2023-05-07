@@ -39,7 +39,9 @@ public class H2UserRepository implements UserRepository {
     }
 
     @Override
-    public void update(User updatedUser) {
+    public void update(UserDTO updatedUser) {
+        String SQL = "UPDATE Users SET password = :password, name = :name, email = :email WHERE userid = :userId";
+        jdbcTemplate.update(SQL, new BeanPropertySqlParameterSource(updatedUser));
 
     }
 }
