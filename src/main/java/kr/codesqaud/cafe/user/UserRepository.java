@@ -13,5 +13,5 @@ public interface UserRepository {
 
     UserDTO findById(String userId);
 
-    void update(User updatedUser);
+    void update(UserDTO updatedUser);
 }
